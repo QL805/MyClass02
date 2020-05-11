@@ -44,7 +44,7 @@ public class Ch14Activity1 extends AppCompatActivity {
         SQLiteDatabase sqLiteDatabase=myOpenHelper.getReadableDatabase();
         try {
             Cursor cursor=sqLiteDatabase.rawQuery("select * from student where stuname=?",new  String[]{"Tom"});
-            while (cursor.moveToNext()){
+            while (cursor.moveToNext()){//游标上移下移
                 int id=cursor.getInt(cursor.getColumnIndex("id"));
                 String stuname=cursor.getString(cursor.getColumnIndex("stuname"));
                 String stutel=cursor.getString(cursor.getColumnIndex("stutel"));
